@@ -5,6 +5,7 @@ import { copyAssets } from "./copy-assets.mjs";
 import { loadConfig } from "./load-config.mjs";
 import { pageContext } from "./page-context.mjs";
 import { renderTemplate } from "./render-template.mjs";
+import { versionFeed } from "./version-feed.mjs";
 
 const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 
@@ -48,6 +49,8 @@ export function build({ outDir, release, configPath = join(ROOT, "site.config.js
     writeFileSync(join(outDir, path), html);
   }
   writeThanksPage(outDir, config, partials);
+  const feed = versionFeed(config);
+  if (feed) writeFileSync(join(outDir, "version.json"), `${JSON.stringify(feed, null, 2)}\n`);
   copyAssets(outDir);
 }
 

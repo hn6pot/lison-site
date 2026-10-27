@@ -70,6 +70,10 @@ Une seule adresse, deux endroits, la même que celle laissée dans Tally :
 1. Déposer le nouveau `Lison-X.Y.Z.dmg` à la racine du dossier, déplacer l'ancien dans « Anciennes versions ». Les testeurs voient le nouveau tout de suite (le partage est sur le dossier).
 2. Mettre à jour `dmg.version` et `dmg.sizeMb`, relire les textes de `content/` contre ce que fait vraiment cette version, et ouvrir une PR.
 
+## Ce que lit l'app
+
+L'app installée lit `version.json` (à la racine du site) à l'ouverture, puis toutes les 6 h, pour annoncer une nouvelle version. Le fichier est construit depuis `site.config.json` : version, poids et dossier Drive. Changer sa forme casse les apps déjà installées : on ajoute des clés, on n'en retire ni n'en renomme jamais.
+
 ## La mise en ligne
 
 GitHub Actions (`.github/workflows/site.yml`) lance les tests et la construction `--release` sur chaque PR : une PR dont la configuration est incomplète reste rouge, et rien d'incomplet n'arrive sur `main`. La configuration se remplit donc avant le premier push (il faut le dossier Drive, le formulaire, l'adresse de contact et un .dmg déposé). Une fusion sur `main` publie sur GitHub Pages (source « GitHub Actions » dans Settings › Pages).
