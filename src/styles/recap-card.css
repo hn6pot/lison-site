@@ -1,0 +1,34 @@
+/* The drawn recap in the hero: a made-up meeting, never a real one. */
+.recap-card {
+  margin: 0; display: flex; flex-direction: column; gap: 18px;
+  padding: 26px; border-radius: var(--radius-card);
+  background: var(--surface); color: var(--text);
+  box-shadow: var(--shadow);
+  transform: rotate(1.5deg);
+  min-width: 0;
+}
+.recap-pill {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 999px; background: var(--ink-bg); color: var(--ink-text);
+  font: 600 13px var(--font-mono);
+}
+.recap-pill-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); animation: recap-pulse 1.6s ease-in-out infinite; }
+@keyframes recap-pulse { 50% { opacity: 0.35; } }
+.recap-head { display: flex; flex-direction: column; gap: 2px; }
+.recap-head strong { font-size: 22px; letter-spacing: -0.02em; }
+.recap-head span { color: var(--text-muted); font-size: 14.5px; }
+.recap-block { display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid var(--line); }
+.recap-label { font: 600 12px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.recap-decision { font-weight: 700; font-size: 17px; }
+.recap-quote { font-size: 15px; color: var(--text-muted); font-style: italic; padding-left: 12px; border-left: 3px solid var(--lavender); }
+.recap-action { display: flex; align-items: center; gap: 12px; }
+.recap-avatar { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font: 700 14px var(--font-sans); color: #fff; }
+.recap-avatar-a { background: #6b3fc4; }
+.recap-avatar-b { background: #e2552a; }
+.recap-action-text { flex: 1; display: flex; flex-direction: column; min-width: 0; font-size: 15.5px; line-height: 1.35; }
+.recap-action-text small { color: var(--text-muted); font-size: 13.5px; }
+.recap-done { flex: none; font-size: 13px; font-weight: 700; color: var(--success); border: 1.5px solid currentColor; border-radius: 999px; padding: 5px 10px; }
+
+@media (max-width: 900px) {
+  .recap-card { transform: none; }
+}

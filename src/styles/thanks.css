@@ -1,0 +1,75 @@
+/* The thank-you page the waitlist form sends people to: one large card, after Codex's design. */
+.thanks-body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background:
+    radial-gradient(ellipse at 82% 13%, rgb(185 160 243 / 30%) 0, transparent 28rem),
+    radial-gradient(ellipse at 9% 91%, rgb(255 107 61 / 14%) 0, transparent 25rem),
+    var(--bg);
+}
+.thanks-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 80px; }
+.thanks-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.thanks-brand .halo { width: 30px; height: 30px; color: var(--accent); }
+.thanks-phase { font: 600 12px var(--font-mono); letter-spacing: 0.13em; text-transform: uppercase; color: var(--text-muted); }
+
+.thanks-main { display: grid; place-items: center; padding: 40px max(20px, env(safe-area-inset-right, 0px)) 64px max(20px, env(safe-area-inset-left, 0px)); }
+.thanks-card {
+  width: min(100%, 1040px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 32px;
+  padding: clamp(32px, 6vw, 80px);
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  background: var(--surface);
+  box-shadow: 0 28px 90px rgb(41 19 74 / 9%), 0 2px 8px rgb(41 19 74 / 4%);
+}
+.thanks-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; font: 700 13px var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.thanks-eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 5px rgb(255 107 61 / 15%); }
+.thanks-copy { min-width: 0; }
+.thanks-copy h1 { white-space: nowrap; font-size: clamp(52px, 7.4vw, 96px); line-height: 0.92; letter-spacing: -0.06em; }
+.thanks-copy h1 span { display: block; margin-top: 10px; color: var(--accent); font-family: Georgia, "Times New Roman", serif; font-size: 0.8em; font-weight: 500; font-style: italic; letter-spacing: -0.05em; }
+.thanks-message { max-width: 44ch; margin-top: 28px; color: var(--text-muted); font-size: 18px; line-height: 1.65; }
+.thanks-message-en { margin-top: 12px; font-size: 15.5px; }
+.thanks-signature { display: flex; align-items: center; gap: 12px; margin-top: 30px; font-weight: 700; }
+.thanks-signature::before { content: ""; width: 26px; height: 1.5px; background: var(--lavender); }
+
+.thanks-visual { position: relative; display: grid; place-items: center; min-height: 340px; }
+.thanks-orb {
+  position: relative; display: grid; place-items: center;
+  width: min(100%, 300px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, var(--surface) 0 4%, var(--surface-tint) 60%, rgb(185 160 243 / 45%) 100%);
+  box-shadow: inset 0 0 0 16px color-mix(in srgb, var(--surface) 45%, transparent), 0 24px 60px rgb(94 58 156 / 15%);
+}
+.thanks-orb::before, .thanks-orb::after { content: ""; position: absolute; inset: -20px; border: 1px solid rgb(107 63 196 / 16%); border-radius: 50%; }
+.thanks-orb::after { inset: -40px; border-color: rgb(107 63 196 / 8%); }
+.thanks-mark { width: 46%; filter: drop-shadow(0 11px 18px rgb(75 41 120 / 14%)); animation: thanks-arrive 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.thanks-ring, .thanks-wave { stroke-linecap: round; stroke-linejoin: round; }
+.thanks-ring { stroke: var(--accent); stroke-width: 6.5; }
+.thanks-wave { stroke: var(--text); stroke-width: 5.5; }
+.thanks-spark { position: absolute; line-height: 1; }
+.thanks-spark-one { top: 12%; right: 8%; color: var(--coral); font-size: 26px; transform: rotate(9deg); }
+.thanks-spark-two { bottom: 16%; left: 8%; color: var(--lavender); font-size: 19px; transform: rotate(-15deg); }
+.thanks-note {
+  position: absolute; right: 0; bottom: 8%;
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 12px 16px; border: 1px solid var(--line); border-radius: 16px;
+  background: var(--surface); box-shadow: 0 12px 30px rgb(40 26 59 / 10%);
+  color: var(--text-muted); font-size: 13px;
+}
+.thanks-note strong { color: var(--accent); font-size: 14px; }
+.thanks-foot { color: var(--text-muted); font-size: 14px; }
+.thanks-foot a { color: var(--link); font-weight: 600; }
+@keyframes thanks-arrive { from { opacity: 0; transform: scale(0.86) rotate(-8deg); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 760px) {
+  .thanks-card { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 32px 24px; border-radius: 28px; }
+  .thanks-visual { grid-row: 1; min-height: 250px; }
+  .thanks-orb { width: 200px; }
+  .thanks-copy h1 { white-space: normal; font-size: clamp(44px, 13vw, 80px); }
+  .thanks-phase { display: none; }
+  .thanks-note { right: 50%; transform: translateX(50%); bottom: 0; white-space: nowrap; }
+  .thanks-main { padding-top: 16px; }
+}

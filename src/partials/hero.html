@@ -1,0 +1,15 @@
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="hero-mark" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false"><path d="M82.5 24.7a42 42 0 1 0 14.4 39.9"/><path d="M28 60h12c5 0 5-13 10-13s5 26 10 26 5-18 10-18 5 5 10 5h8"/></svg>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow eyebrow-on-hero">{{t.hero.eyebrow}}</p>
+      <h1 id="hero-title">{{t.hero.title}}</h1>
+      <p class="hero-lead">{{t.hero.lead}}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#acces">{{t.hero.ctaTester}}</a>
+        {{{html.heroWaitlist}}}
+      </div>
+    </div>
+    {{> illustration-recap}}
+  </div>
+</section>

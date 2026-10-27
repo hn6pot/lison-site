@@ -1,0 +1,36 @@
+<section class="section" id="acces" aria-labelledby="access-title">
+  <div class="wrap">
+    <p class="eyebrow">{{t.access.eyebrow}}</p>
+    <h2 id="access-title">{{t.access.title}}</h2>
+    <p class="section-intro">{{t.access.intro}}</p>
+    <div class="access-grid">
+      <article class="access-card access-tester">
+        <div class="access-head">
+          <h3>{{t.access.testerTitle}}</h3>
+          <p class="dmg-line">{{computed.dmgLine}}</p>
+        </div>
+        <p>{{t.access.testerText}}</p>
+        <div class="actions">{{{html.download}}}</div>
+        <h4>{{t.access.stepsTitle}}</h4>
+        <ol class="install-steps">
+          <li>{{t.access.step1}}</li>
+          <li>{{t.access.step2}}</li>
+          <li>{{t.access.step3}}</li>
+        </ol>
+        <h4>{{t.access.notesTitle}}</h4>
+        <ul class="notes">
+          <li>{{t.access.note1}}</li>
+          <li>{{t.access.note2}}</li>
+          <li>{{t.access.note3}}</li>
+          <li>{{t.access.note4}}</li>
+        </ul>
+      </article>
+      <article class="access-card access-waitlist">
+        <h3>{{t.access.waitlistTitle}}</h3>
+        <p>{{t.access.waitlistText}}</p>
+        <div class="actions">{{{html.waitlist}}}</div>
+        <p class="fine">{{t.access.waitlistNote}}</p>
+      </article>
+    </div>
+  </div>
+</section>

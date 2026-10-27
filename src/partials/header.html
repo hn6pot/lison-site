@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="./">{{> halo}}<span>Lison</span></a>
+    <nav class="header-nav" aria-label="{{t.nav.access}}">
+      <a class="nav-link" href="#acces">{{t.nav.access}}</a>
+      <span class="lang-switch">
+        <span class="lang-current" aria-current="true">{{t.nav.currentLanguageShort}}</span>
+        <a class="lang-other" href="{{page.otherHref}}" hreflang="{{page.otherLang}}" lang="{{page.otherLang}}" title="{{t.nav.otherLanguageLabel}}"><span aria-hidden="true">{{t.nav.otherLanguageShort}}</span><span class="sr-only">{{t.nav.otherLanguage}}</span></a>
+      </span>
+    </nav>
+  </div>
+</header>
