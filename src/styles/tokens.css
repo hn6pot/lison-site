@@ -1,0 +1,60 @@
+/* The app's palette, named by role. Brand: ink #15121e, violet #6b3fc4, coral #ff6b3d, paper #f5f4fa, lavender #b9a0f3. */
+:root {
+  --bg: #f5f4fa;
+  --surface: #ffffff;
+  --surface-tint: #efe8fc;
+  --text: #15121e;
+  --text-muted: #4d4860;
+  --line: #dad6e4;
+  --accent: #6b3fc4;
+  --accent-strong: #4a2a99;
+  --link: #5a32b0;
+  --coral: #ff6b3d;
+  --coral-hover: #ff8459;
+  --on-coral: #15121e;
+  --hero-bg: #6b3fc4;
+  --hero-text: #ffffff;
+  --hero-muted: #e6dcff;
+  --hero-mark: rgb(255 255 255 / 9%);
+  --ink-bg: #15121e;
+  --ink-text: #ffffff;
+  --ink-muted: #c9c3d9;
+  --lavender: #b9a0f3;
+  --success: #1e8048;
+  --success-soft: #ddf2e5;
+  --soon-bg: #e4e0ee;
+  --soon-text: #5f5a72;
+  --shadow: 0 30px 60px -20px rgb(21 18 30 / 45%), 0 8px 20px -8px rgb(21 18 30 / 25%);
+  --font-sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius-card: 24px;
+  --radius-small: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #100e17;
+    --surface: #1b1826;
+    --surface-tint: #221d33;
+    --text: #f1eef9;
+    --text-muted: #b7b0cc;
+    --line: #353049;
+    --accent: #b9a0f3;
+    --accent-strong: #d2c2ff;
+    --link: #c9b5ff;
+    --hero-bg: #3f2486;
+    --hero-text: #ffffff;
+    --hero-muted: #ddd1fb;
+    --hero-mark: rgb(255 255 255 / 7%);
+    --ink-bg: #0a0910;
+    --ink-text: #f1eef9;
+    --ink-muted: #b7b0cc;
+    --success: #5fd47a;
+    --success-soft: #183622;
+    --soon-bg: #2a2638;
+    --soon-text: #a39cba;
+    --shadow: 0 30px 60px -20px rgb(0 0 0 / 70%), 0 8px 20px -8px rgb(0 0 0 / 50%);
+    color-scheme: dark;
+  }
+}

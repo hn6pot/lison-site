@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "lang": "en",
+    "title": "Lison · After the meeting, nothing slips",
+    "description": "Lison listens to your meetings on your Mac, pulls out what matters and follows everyone's action items until they are done. Early access, by invitation."
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "access": "Early access",
+    "otherLanguage": "Français",
+    "otherLanguageShort": "FR",
+    "currentLanguageShort": "EN",
+    "otherLanguageLabel": "Lire cette page en français"
+  },
+  "hero": {
+    "eyebrow": "Early access · by invitation",
+    "title": "After the meeting, nothing slips.",
+    "lead": "Lison listens to your meetings on your Mac, pulls out what matters and follows everyone's action items until they are done.",
+    "ctaTester": "I have an invitation",
+    "ctaWaitlist": "Join the waitlist"
+  },
+  "illustration": {
+    "label": "Example of a recap in Lison: a made-up meeting, its decisions and its action items.",
+    "recording": "Recording · 24:31",
+    "meeting": "Product sync",
+    "when": "Tuesday · 10:00 · 4 people",
+    "decisionsLabel": "Decision",
+    "decision": "The beta ships on November 12.",
+    "quote": "“Let's keep the 12th, it's doable.”",
+    "actionsLabel": "Action items",
+    "action1": "Send the list of testers",
+    "owner1": "Léa",
+    "due1": "Thursday",
+    "action2": "Review the landing page",
+    "owner2": "Malik",
+    "due2": "Friday",
+    "done": "Done"
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Three steps, and nothing to do during the meeting.",
+    "step1Title": "It listens",
+    "step1Text": "Your microphone and the call audio, whatever video tool you use. Lison finds the meeting in your Google Calendar.",
+    "step2Title": "It pulls out what matters",
+    "step2Text": "Decisions and their conditions, what is blocked, a client's needs, and who committed to what, by when. Every quote is checked: it was really said.",
+    "step3Title": "It follows everyone's actions",
+    "step3Text": "Each action item keeps its owner and due date from one meeting to the next. Later meetings bring news of it, and only you close an action item."
+  },
+  "benefits": {
+    "eyebrow": "What changes",
+    "title": "Nothing gets lost between meetings.",
+    "item1Title": "The gist of every meeting",
+    "item1Text": "Decisions, blockers, next steps: a clear recap a few minutes after the end, without taking a single note.",
+    "item2Title": "Everyone's actions, followed to the end",
+    "item2Text": "Every spoken commitment becomes an action item, with an owner and a due date. It stays tracked until it is done, even three meetings later.",
+    "item3Title": "No more chasing from memory",
+    "item3Text": "An action item late or blocked? One click and Lison drafts the follow-up to its owner. You read it and send it.",
+    "item4Title": "And dictation, anywhere on your Mac",
+    "item4Text": "One shortcut, you speak, and the text appears in the app you are using."
+  },
+  "local": {
+    "eyebrow": "Privacy",
+    "title": "Your meetings stay with you.",
+    "item1": "The audio never leaves your Mac, and the transcription runs on it.",
+    "item2": "The recap is written by your own Claude Code (or Codex), on your own subscription: the meeting text goes through it and nothing else.",
+    "item3": "No Lison server, no account to create."
+  },
+  "access": {
+    "eyebrow": "Early access",
+    "title": "Lison opens by invitation.",
+    "intro": "Downloads are reserved for invited people. Everyone else can join the waitlist.",
+    "testerTitle": "You have an invitation",
+    "testerText": "Sign in to Google with the address that received the invitation: that is the one that opens the download folder.",
+    "download": "Download Lison",
+    "versionLabel": "Version",
+    "sizeUnit": "MB",
+    "versionSoon": "First version coming soon",
+    "stepsTitle": "Install in three moves",
+    "step1": "Open the .dmg file and drag Lison into Applications.",
+    "step2": "Open Lison. macOS refuses to open it: close the message with “Done”, never with “Move to Trash”.",
+    "step3": "System Settings › Privacy & Security › “Open Anyway”, then your Mac password, then “Open Anyway” one last time.",
+    "notesTitle": "Good to know",
+    "note1": "Drive warns that it can't scan a file this large for viruses: click “Download anyway”.",
+    "note2": "Drive shows “Request access”? You are signed in with another Google account, or your invitation is not active yet.",
+    "note3": "macOS refuses because Lison is not notarized by Apple yet during early access.",
+    "note4": "On first launch, an assistant sets up the rest: the transcription models (608 MB), Claude Code and your calendar.",
+    "waitlistTitle": "Not invited yet",
+    "waitlistText": "Leave your first name and your Google address: we will write to you as soon as a spot opens up.",
+    "waitlist": "Join the waitlist",
+    "waitlistNote": "The form opens on Tally, in a new tab."
+  },
+  "needs": {
+    "eyebrow": "What you need",
+    "title": "Before you install",
+    "item1": "A Mac with Apple silicon (M1 or later)",
+    "item2": "macOS 14.2 or later",
+    "item3": "A Claude subscription (Pro or Max), or ChatGPT with Codex",
+    "item4": "A Google Calendar",
+    "item5": "About 1 GB of free space",
+    "item6": "The app itself is in French for now."
+  },
+  "legal": {
+    "title": "Privacy",
+    "who": "Waitlist information is kept by the Lison team, and by no one else.",
+    "what": "The first name, address and optional answer left in the form, and what Google Drive records when you open the download folder.",
+    "why": "Only to invite you to test Lison. Never sold, never used for advertising.",
+    "where": "The waitlist is kept on Tally (a Belgian company, data hosted in Europe), downloads on Google Drive. This site is hosted by GitHub Pages, which keeps access logs.",
+    "howLong": "Until the end of early access, and at most one year after you signed up.",
+    "rights": "To see your data or be removed from the list, write to",
+    "rightsAfter": "We do it within a month.",
+    "cookies": "This site sets no cookies and does not measure its audience.",
+    "rightsNoContact": "To see your data or be removed from the list, just ask by replying to any of our emails: it is done within a month."
+  },
+  "footer": {
+    "line": "Lison © 2026",
+    "status": "Early access, by invitation."
+  },
+  "actions": {
+    "soon": "soon"
+  },
+  "thanks": {
+    "title": "Thank you · Lison",
+    "phase": "First wave · 01",
+    "eyebrow": "You are in the first wave",
+    "heading": "Thank you",
+    "headingAlt": "Merci !",
+    "message": "Thanks for wanting to be part of the journey. We can't wait to build what comes next with you, and we'll be in touch soon.",
+    "signature": "See you soon, Lison",
+    "noteTitle": "Thanks for being here.",
+    "noteText": "What comes next, we build together.",
+    "visualLabel": "The Lison symbol, a halo and a wave, at the centre of a glowing circle.",
+    "footer": "A small step, a big thank you.",
+    "back": "Back to the site"
+  }
+}

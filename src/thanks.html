@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.thanks.title}}</title>
+  <meta name="description" content="{{t.thanks.message}}">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f4fa">
+  <link rel="canonical" href="{{page.url}}">
+  <link rel="icon" type="image/svg+xml" href="{{page.root}}assets/brand/app-icon.svg">
+  <link rel="stylesheet" href="{{page.root}}assets/site.css">
+</head>
+<body class="thanks-body">
+  <header class="wrap thanks-bar">
+    <a class="thanks-brand" href="{{page.root}}">{{> halo}}<span>Lison</span></a>
+    <span class="thanks-phase">{{t.thanks.phase}}</span>
+  </header>
+  <main class="thanks-main">
+    <section class="thanks-card" aria-labelledby="thanks-title">
+      <div class="thanks-copy">
+        <p class="thanks-eyebrow">{{t.thanks.eyebrow}}</p>
+        <h1 id="thanks-title">{{t.thanks.heading}}<span>{{t.thanks.headingAlt}}</span></h1>
+        <p class="thanks-message">{{t.thanks.message}}</p>
+        <p class="thanks-message thanks-message-en" lang="en">{{en.thanks.message}}</p>
+        <p class="thanks-signature">{{t.thanks.signature}}</p>
+      </div>
+      <div class="thanks-visual" role="img" aria-label="{{t.thanks.visualLabel}}">
+        <span class="thanks-spark thanks-spark-one" aria-hidden="true">✳</span>
+        <span class="thanks-spark thanks-spark-two" aria-hidden="true">✦</span>
+        <div class="thanks-orb">
+          <svg class="thanks-mark" viewBox="0 0 120 120" fill="none" aria-hidden="true" focusable="false"><path class="thanks-ring" d="M82.5 24.7a42 42 0 1 0 14.4 39.9"/><path class="thanks-wave" d="M28 60h12c5 0 5-13 10-13s5 26 10 26 5-18 10-18 5 5 10 5h8"/><circle class="halo-dot" cx="98.1" cy="57.2" r="5.6"/></svg>
+        </div>
+        <div class="thanks-note"><strong>{{t.thanks.noteTitle}}</strong><span>{{t.thanks.noteText}}</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap thanks-bar thanks-foot">
+    <span>{{t.thanks.footer}}</span>
+    <a href="{{page.root}}">{{t.thanks.back}}</a>
+  </footer>
+</body>
+</html>

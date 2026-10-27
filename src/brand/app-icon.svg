@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Icône de l’app — Halo</title>
+  <desc id="desc">Un halo ouvert et une onde sur un fond uni, terminés par un point de signal.</desc>
+  <rect width="1024" height="1024" fill="#6B3FC4"/>
+  <g transform="translate(2 27.5) scale(8.5)">
+    <path d="M82.5 24.7a42 42 0 1 0 14.4 39.9" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+    <path d="M28 60h12c5 0 5-13 10-13s5 26 10 26 5-18 10-18 5 5 10 5h8" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="98.1" cy="57.2" r="5.8" fill="#FF7950"/>
+  </g>
+</svg>

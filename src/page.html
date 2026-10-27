@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{t.meta.lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{t.meta.title}}</title>
+  <meta name="description" content="{{t.meta.description}}">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#6b3fc4">
+  <link rel="canonical" href="{{page.url}}">
+  <link rel="alternate" hreflang="fr" href="{{site.frUrl}}">
+  <link rel="alternate" hreflang="en" href="{{site.enUrl}}">
+  <link rel="alternate" hreflang="x-default" href="{{site.frUrl}}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{t.meta.title}}">
+  <meta property="og:description" content="{{t.meta.description}}">
+  <meta property="og:url" content="{{page.url}}">
+  <meta property="og:image" content="{{site.imageUrl}}">
+  <link rel="icon" type="image/svg+xml" href="{{page.root}}assets/brand/app-icon.svg">
+  <link rel="apple-touch-icon" href="{{page.root}}assets/brand/app-icon.png">
+  <link rel="stylesheet" href="{{page.root}}assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">{{t.nav.skip}}</a>
+  {{> header}}
+  <main id="main">
+    {{> hero}}
+    {{> how}}
+    {{> benefits}}
+    {{> local}}
+    {{> access}}
+    {{> needs}}
+  </main>
+  {{> footer}}
+</body>
+</html>
