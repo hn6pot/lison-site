@@ -91,3 +91,18 @@ test("sans configuration, les boutons disent « bientôt » et aucun lien Drive 
 test("sans configuration, la mise en ligne échoue", () => {
   assert.throws(() => buildWith(EMPTY_CONFIG, { release: true }), /driveFolderUrl/);
 });
+
+test("version.json est servi à la racine, avec trois clés et aucun mot interdit", () => {
+  const raw = site.read("version.json");
+  assert.deepEqual(JSON.parse(raw), {
+    version: "0.4.0",
+    sizeMb: 155,
+    downloadUrl: COMPLETE_CONFIG.driveFolderUrl,
+  });
+  assert.doesNotMatch(raw, FORBIDDEN, "un mot interdit apparaît");
+});
+
+test("sans configuration, aucun version.json n'est publié", () => {
+  const preview = buildWith(EMPTY_CONFIG, { release: false });
+  assert.equal(existsSync(join(preview.outDir, "version.json")), false);
+});
