@@ -27,6 +27,7 @@ Puis http://localhost:4173/. Tant que `site.config.json` n'a pas ses liens, les 
 | `waitlistFormUrl` | Le lien de partage du formulaire Tally (`https://tally.so/r/…`). |
 | `contactEmail` | Facultative pour l'instant (la note dit alors de répondre à l'un de nos e-mails). L'adresse affichée dans la note de confidentialité. Une adresse dédiée au projet (par exemple une adresse Gmail « lison »), jamais une adresse perso ni d'entreprise : le site ne nomme personne. |
 | `dmg.version`, `dmg.sizeMb` | La version du .dmg déposé (`0.4.0`) et son poids en Mo (`155`). |
+| `dmg.driveFileId` | Facultatif. L'identifiant Drive du .dmg de cette version (`1_5Qq…`, jamais un lien). Avec lui, « Télécharger » et `version.json` mènent au fichier lui-même (`https://drive.google.com/uc?export=download&id=…`), et le dossier reste en lien secondaire « Toutes les versions ». Sans lui (`null`), tout mène au dossier. `pnpm release` de Lison le remplit seul. |
 
 ## Une fois : le dossier Drive
 
@@ -68,7 +69,7 @@ Une seule adresse, deux endroits, la même que celle laissée dans Tally :
 ## Publier une nouvelle version
 
 1. Déposer le nouveau `Lison-X.Y.Z.dmg` à la racine du dossier, déplacer l'ancien dans « Anciennes versions ». Les testeurs voient le nouveau tout de suite (le partage est sur le dossier).
-2. Mettre à jour `dmg.version` et `dmg.sizeMb`, relire les textes de `content/` contre ce que fait vraiment cette version, et ouvrir une PR.
+2. Mettre à jour `dmg.version`, `dmg.sizeMb` et `dmg.driveFileId` (`rclone lsjson lison-testeurs: --files-only` le donne, champ `ID`), relire les textes de `content/` contre ce que fait vraiment cette version, et ouvrir une PR.
 
 ## Ce que lit l'app
 

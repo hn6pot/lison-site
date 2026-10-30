@@ -1,3 +1,4 @@
+import { downloadUrl } from "./download-url.mjs";
 import { escapeHtml } from "./escape-html.mjs";
 import { renderAction } from "./render-action.mjs";
 
@@ -29,7 +30,12 @@ export function pageContext({ lang, content, config }) {
     },
     html: {
       heroWaitlist: renderAction(config.waitlistFormUrl, content.hero.ctaWaitlist, soon, "ghost"),
-      download: renderAction(config.driveFolderUrl, content.access.download, soon, "primary"),
+      download: renderAction(downloadUrl(config), content.access.download, soon, "primary"),
+      // The folder stays one click away, with the earlier versions, once the button leads to the file.
+      allVersions:
+        config.dmg.driveFileId && config.driveFolderUrl
+          ? `<p class="fine"><a href="${escapeHtml(config.driveFolderUrl)}" target="_blank" rel="noopener">${escapeHtml(content.access.allVersions)}</a></p>`
+          : "",
       waitlist: renderAction(config.waitlistFormUrl, content.access.waitlist, soon, "primary"),
       rightsLine: config.contactEmail
         ? `${escapeHtml(content.legal.rights)} <a href="mailto:${escapeHtml(config.contactEmail)}">${escapeHtml(config.contactEmail)}</a>. ${escapeHtml(content.legal.rightsAfter)}`

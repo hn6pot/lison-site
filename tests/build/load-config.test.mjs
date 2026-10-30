@@ -10,14 +10,14 @@ const EMPTY = {
   driveFolderUrl: null,
   waitlistFormUrl: null,
   contactEmail: null,
-  dmg: { version: null, sizeMb: null },
+  dmg: { version: null, sizeMb: null, driveFileId: null },
 };
 const COMPLETE = {
   ...EMPTY,
   driveFolderUrl: "https://drive.google.com/drive/folders/1AbC-dEf_123",
   waitlistFormUrl: "https://tally.so/r/wAbC12",
   contactEmail: "contact@example.org",
-  dmg: { version: "0.4.0", sizeMb: 155 },
+  dmg: { version: "0.4.0", sizeMb: 155, driveFileId: "1AbCdEfGhIjKlMnOpQrStUvWxYz_-012" },
 };
 
 function writeConfig(config) {
@@ -35,7 +35,8 @@ test("une config vide échoue en release en nommant les quatre champs requis", (
     () => loadConfig(writeConfig(EMPTY), { release: true }),
     (error) =>
       ["driveFolderUrl", "waitlistFormUrl", "dmg.version", "dmg.sizeMb"].every((field) => error.message.includes(field)) &&
-      !error.message.includes("contactEmail"),
+      !error.message.includes("contactEmail") &&
+      !error.message.includes("driveFileId"),
   );
 });
 
@@ -91,4 +92,16 @@ test("une clé absente est refusée, même en local", () => {
 test("un lien Drive avec /u/N/ est refusé : il désigne un compte Google de celui qui l'a copié", () => {
   const config = { ...EMPTY, driveFolderUrl: "https://drive.google.com/drive/u/2/folders/1ZzMfgq9nVoR0F8YmXxJ6aAzhY1GfGhBv" };
   assert.throws(() => loadConfig(writeConfig(config), { release: false }), /\/u\/2\//);
+});
+
+test("l'identifiant Drive du .dmg est facultatif, même en release", () => {
+  const config = { ...COMPLETE, dmg: { ...COMPLETE.dmg, driveFileId: null } };
+  assert.equal(loadConfig(writeConfig(config), { release: true }).dmg.driveFileId, null);
+});
+
+test("un lien à la place de l'identifiant Drive du .dmg est refusé", () => {
+  for (const driveFileId of ["https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQrStUvWxYz/view", "abc", "1AbCdEfGhIjKlMnOpQrStUvWxYz&x=1"]) {
+    const config = { ...EMPTY, dmg: { ...EMPTY.dmg, driveFileId } };
+    assert.throws(() => loadConfig(writeConfig(config), { release: false }), /dmg\.driveFileId/, driveFileId);
+  }
 });
