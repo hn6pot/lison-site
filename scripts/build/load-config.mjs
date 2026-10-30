@@ -9,6 +9,8 @@ const FIELDS = [
   ["contactEmail", (c) => c.contactEmail, (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "une adresse e-mail", "optional"],
   ["dmg.version", (c) => c.dmg?.version, (v) => /^\d+\.\d+\.\d+$/.test(v), "un numéro de version X.Y.Z"],
   ["dmg.sizeMb", (c) => c.dmg?.sizeMb, (v) => Number.isInteger(v) && v > 0, "un poids en Mo, nombre entier"],
+  // Without it, "Download" falls back to the folder.
+  ["dmg.driveFileId", (c) => c.dmg?.driveFileId, (v) => typeof v === "string" && /^[\w-]{20,}$/.test(v), "l'identifiant Drive du .dmg (lettres, chiffres, - et _), jamais un lien", "optional"],
 ];
 
 /**

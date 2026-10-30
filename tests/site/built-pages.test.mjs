@@ -5,6 +5,7 @@ import { dirname, join } from "node:path";
 import { COMPLETE_CONFIG, EMPTY_CONFIG, buildWith } from "./build-fixture.mjs";
 import { FORBIDDEN } from "../support/forbidden-words.mjs";
 
+const DIRECT_DOWNLOAD = `https://drive.google.com/uc?export=download&amp;id=${COMPLETE_CONFIG.dmg.driveFileId}`;
 const PAGES = [
   ["index.html", "fr"],
   ["en/index.html", "en"],
@@ -66,8 +67,9 @@ for (const [path, lang] of PAGES) {
     assert.deepEqual([...new Set(emails)], [COMPLETE_CONFIG.contactEmail]);
   });
 
-  test(`${path} : le dossier Drive, le formulaire et la version sont là`, () => {
-    assert.ok(html.includes(`href="${COMPLETE_CONFIG.driveFolderUrl}"`));
+  test(`${path} : le .dmg, le dossier Drive, le formulaire et la version sont là`, () => {
+    assert.match(html, new RegExp(`<a class="btn btn-primary" href="${DIRECT_DOWNLOAD.replaceAll(/[.?]/g, "\\$&")}"`));
+    assert.match(html, new RegExp(`<p class="fine"><a href="${COMPLETE_CONFIG.driveFolderUrl}"[^>]*>(Toutes les versions|All versions)</a></p>`));
     assert.ok(html.includes(`href="${COMPLETE_CONFIG.waitlistFormUrl}"`));
     assert.match(html, /0\.4\.0 · 155 (Mo|MB)/);
     assert.doesNotMatch(html, /is-soon/);
@@ -97,7 +99,7 @@ test("version.json est servi à la racine, avec trois clés et aucun mot interdi
   assert.deepEqual(JSON.parse(raw), {
     version: "0.4.0",
     sizeMb: 155,
-    downloadUrl: COMPLETE_CONFIG.driveFolderUrl,
+    downloadUrl: `https://drive.google.com/uc?export=download&id=${COMPLETE_CONFIG.dmg.driveFileId}`,
   });
   assert.doesNotMatch(raw, FORBIDDEN, "un mot interdit apparaît");
 });
@@ -105,4 +107,14 @@ test("version.json est servi à la racine, avec trois clés et aucun mot interdi
 test("sans configuration, aucun version.json n'est publié", () => {
   const preview = buildWith(EMPTY_CONFIG, { release: false });
   assert.equal(existsSync(join(preview.outDir, "version.json")), false);
+});
+
+test("sans identifiant du .dmg, « Télécharger » et version.json mènent au dossier, sans lien secondaire", () => {
+  const folderOnly = buildWith({ ...COMPLETE_CONFIG, dmg: { ...COMPLETE_CONFIG.dmg, driveFileId: null } }, { release: true });
+  for (const path of ["index.html", "en/index.html"]) {
+    const html = folderOnly.read(path);
+    assert.ok(html.includes(`<a class="btn btn-primary" href="${COMPLETE_CONFIG.driveFolderUrl}"`), path);
+    assert.doesNotMatch(html, /uc\?export=download|Toutes les versions|All versions/, path);
+  }
+  assert.equal(JSON.parse(folderOnly.read("version.json")).downloadUrl, COMPLETE_CONFIG.driveFolderUrl);
 });

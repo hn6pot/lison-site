@@ -8,7 +8,7 @@ export const COMPLETE_CONFIG = {
   driveFolderUrl: "https://drive.google.com/drive/folders/1AbC-dEf_123",
   waitlistFormUrl: "https://tally.so/r/wAbC12",
   contactEmail: "contact@example.org",
-  dmg: { version: "0.4.0", sizeMb: 155 },
+  dmg: { version: "0.4.0", sizeMb: 155, driveFileId: "1AbCdEfGhIjKlMnOpQrStUvWxYz_-012" },
 };
 
 export const EMPTY_CONFIG = {
@@ -16,7 +16,7 @@ export const EMPTY_CONFIG = {
   driveFolderUrl: null,
   waitlistFormUrl: null,
   contactEmail: null,
-  dmg: { version: null, sizeMb: null },
+  dmg: { version: null, sizeMb: null, driveFileId: null },
 };
 
 /** Builds the site with this config into a fresh folder; returns the folder and a page reader. */
